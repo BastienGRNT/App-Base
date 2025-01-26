@@ -7,7 +7,7 @@ namespace AppBase
     {
         public static NpgsqlConnection ConnectSql()
         {
-            string envPath = Path.Combine(Directory.GetCurrentDirectory(), "INIT", "DATABASE", "CONNECTION", "database.env");
+            string envPath = Path.Combine(Directory.GetCurrentDirectory(), "Database", "database.env");
             Env.Load(envPath);
 
             string host = Env.GetString("DB_HOST");

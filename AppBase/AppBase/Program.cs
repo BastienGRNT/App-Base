@@ -1,4 +1,8 @@
 using AppBase.Notification;
+using AppBase.Auth.Token; // Assure-toi d'importer le bon namespace
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +16,30 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();  // Autoriser toutes les méthodes HTTP
     });
 });
+
+// Configuration JWT
+var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+builder.Services.AddSingleton(jwtSettings);
+
+// Enregistrement de JwtService dans le conteneur DI
+builder.Services.AddScoped<TokenService>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = JwtSettings.Issuer,
+            ValidAudience = JwtSettings.Audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSettings.SecretKey))
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 // Ajout des services nécessaires
 builder.Services.AddControllers();
@@ -30,6 +58,10 @@ app.UseWebSockets();
 
 // Activation de CORS
 app.UseCors("AllowAll");
+
+// Activation de l'authentification et de l'autorisation JWT
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Mapping des routes API
 app.MapControllers();
