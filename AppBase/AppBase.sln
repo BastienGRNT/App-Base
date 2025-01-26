@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBase", "AppBase\AppBase.csproj", "{CC050B8D-DDB6-4C25-99DA-69192CCBBA54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC050B8D-DDB6-4C25-99DA-69192CCBBA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC050B8D-DDB6-4C25-99DA-69192CCBBA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC050B8D-DDB6-4C25-99DA-69192CCBBA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC050B8D-DDB6-4C25-99DA-69192CCBBA54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
