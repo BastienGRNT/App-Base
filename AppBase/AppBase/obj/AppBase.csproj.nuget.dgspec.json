@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BASTIEN\\RiderProjects\\AppBase\\AppBase\\AppBase.csproj": {}
+    "C:\\Users\\BASTIEN\\Code\\FireBase\\App-Base\\AppBase\\AppBase\\AppBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BASTIEN\\RiderProjects\\AppBase\\AppBase\\AppBase.csproj": {
+    "C:\\Users\\BASTIEN\\Code\\FireBase\\App-Base\\AppBase\\AppBase\\AppBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BASTIEN\\RiderProjects\\AppBase\\AppBase\\AppBase.csproj",
+        "projectUniqueName": "C:\\Users\\BASTIEN\\Code\\FireBase\\App-Base\\AppBase\\AppBase\\AppBase.csproj",
         "projectName": "AppBase",
-        "projectPath": "C:\\Users\\BASTIEN\\RiderProjects\\AppBase\\AppBase\\AppBase.csproj",
+        "projectPath": "C:\\Users\\BASTIEN\\Code\\FireBase\\App-Base\\AppBase\\AppBase\\AppBase.csproj",
         "packagesPath": "C:\\Users\\BASTIEN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BASTIEN\\RiderProjects\\AppBase\\AppBase\\obj\\",
+        "outputPath": "C:\\Users\\BASTIEN\\Code\\FireBase\\App-Base\\AppBase\\AppBase\\obj\\",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
@@ -44,9 +44,33 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
